@@ -24,7 +24,7 @@ class PointsController {
     const {
       name,
       email,
-      whatsaap,
+      whatsapp,
       latitude,
       longitude,
       city,
@@ -38,7 +38,7 @@ class PointsController {
       image: 'image-fake',
       name,
       email,
-      whatsaap,
+      whatsapp,
       latitude,
       longitude,
       city,
@@ -50,7 +50,7 @@ class PointsController {
         'https://images.unsplash.com/photo-1556767576-5ec41e3239ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60',
       name,
       email,
-      whatsaap,
+      whatsapp,
       latitude,
       longitude,
       city,
@@ -79,7 +79,7 @@ class PointsController {
     const point = await Knex('points').where('id', id).first();
 
     if (!point) {
-      return res.json(404).json({ error: 'Point not found' });
+      return res.status(404).json({ error: 'Point not found' });
     }
 
     const items = await Knex('items')
