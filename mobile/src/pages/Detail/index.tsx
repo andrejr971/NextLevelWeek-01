@@ -23,6 +23,7 @@ interface Params {
 interface Data {
   point: {
     image: string;
+    image_url: string;
     name: string;
     email: string;
     whatsapp: string;
@@ -76,10 +77,7 @@ const Detail = () => {
 
         <Image
           source={{
-            uri:
-              data.point.image === 'image-fake'
-                ? 'https://images.unsplash.com/photo-1556767576-5ec41e3239ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
-                : data.point.image,
+            uri: data.point.image_url,
           }}
           style={styles.pointImage}
         />
